@@ -1,7 +1,6 @@
 @import "@styles/settings/__settings";
 
 .button {
-
   font-size: 1em;
   color: white;
   background-color: $color-button-background;
@@ -9,12 +8,11 @@
   font-weight: $font-weight-black;
   font-family: inherit;
   text-transform: uppercase;
-  padding: .6em 1em;
+  padding: 0.6em 1em;
   border-radius: $border-radius-small;
   cursor: pointer;
 
   &:hover {
     background-color: lighten($color-button-background, 10);
   }
-
 }

@@ -1,29 +1,24 @@
 @import "@styles/settings/__settings";
 
 .header {
-
   width: 100%;
   font-size: 1.2em;
   background-color: $color-header-background;
   color: white;
   padding: 1em 0;
-
 }
 
 .headerContainer {
-
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   @media (max-width: 720px) {
-    flex-wrap: wrap
+    flex-wrap: wrap;
   }
-
 }
 
 .headerTitle {
-
   display: flex;
   align-items: center;
   flex-grow: 1;
@@ -35,13 +30,11 @@
     order: 1;
     width: 50%;
     height: 1.5em;
-    margin-bottom: .2em;
+    margin-bottom: 0.2em;
   }
-
 }
 
 .headerLinks {
-
   display: flex;
   list-style: none;
   padding: 0;
@@ -56,8 +49,7 @@
   }
 
   li {
-
-    margin: 0 .8em;
+    margin: 0 0.8em;
 
     &:first-child {
       margin-left: 0;
@@ -66,17 +58,14 @@
     &:last-child {
       margin-right: 0;
     }
-
   }
 
   a {
     color: $color-header-links;
   }
-
 }
 
 .headerCart {
-
   display: flex;
   align-items: center;
   margin: 0;
@@ -86,31 +75,27 @@
     order: 2;
     width: 50%;
     height: 1.5em;
-    margin-bottom: .2em;
+    margin-bottom: 0.2em;
   }
 
   button {
-
     display: flex;
     justify-content: center;
     align-items: center;
     color: $color-header-links;
-    font-size: .9em;
+    font-size: 0.9em;
     background: transparent;
     border: none;
     cursor: pointer;
 
     svg {
       color: $color-header-links;
-      margin-right: .5em;
+      margin-right: 0.5em;
     }
-
   }
-
 }
 
 .headerLocales {
-
   @extend .headerLinks;
   margin: 0 0 0 2em;
 
@@ -126,11 +111,10 @@
     width: 2em;
     height: 2em;
     color: $color-header-background;
-    font-size: .9em;
+    font-size: 0.9em;
     font-weight: 600;
     text-transform: uppercase;
     background-color: $color-header-links;
     border-radius: 100%;
   }
-
 }

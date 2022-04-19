@@ -1,15 +1,12 @@
 .productWrapper {
-
   display: flex;
 
   @media (max-width: 1024px) {
     flex-direction: column;
   }
-
 }
 
 .productImage {
-
   width: 50%;
   margin-right: 2em;
 
@@ -20,19 +17,16 @@
   }
 
   & > div {
-    display: block!important;
+    display: block !important;
   }
-
 }
 
 .productContent {
-
   width: 50%;
 
   @media (max-width: 1024px) {
     width: 100%;
   }
-
 }
 
 .productDescription {
@@ -41,7 +35,7 @@
 
 .productPrice {
   font-size: 2em;
-  margin: .4em 0 0;
+  margin: 0.4em 0 0;
 }
 
 .productBuy {

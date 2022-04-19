@@ -6,21 +6,17 @@
   @media (max-width: 720px) {
     margin-bottom: 4em;
   }
-
 }
 
 .heroLink {
-
   display: flex;
 
   @media (max-width: 720px) {
     flex-direction: column;
   }
-
 }
 
 .heroContent {
-
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -42,11 +38,10 @@
     text-align: center;
     align-items: center;
     padding-left: 0;
-    margin-top: .5em;
+    margin-top: 0.5em;
   }
 
   h2 {
-
     font-size: 3.5em;
     margin: 0;
 
@@ -57,13 +52,11 @@
     @media (max-width: 640px) {
       font-size: 2em;
     }
-
   }
 
   p {
-
     font-size: 2em;
-    margin-top: .5em;
+    margin-top: 0.5em;
 
     @media (max-width: 1024px) {
       font-size: 2.8vw;
@@ -76,9 +69,7 @@
     &:last-child {
       margin-bottom: 0;
     }
-
   }
-
 }
 
 .heroImage {
@@ -102,45 +93,38 @@
 
 .productTitle {
   font-size: 1.4em;
-  margin: .4em 0 0;
+  margin: 0.4em 0 0;
 }
 
 .productPrice {
-  margin: .4em 0 0;
+  margin: 0.4em 0 0;
 }
 
 .productImage {
-
   & > div {
-    display: block!important;
+    display: block !important;
   }
-
 }
 
 // Stores
 
 .stores {
-
   display: flex;
 
   @media (max-width: 840px) {
     flex-direction: column;
   }
-
 }
 
 .storesLocations {
-
   margin-right: 3em;
 
   @media (max-width: 840px) {
     order: 2;
   }
-
 }
 
 .locations {
-
   list-style: none;
   background-color: white;
   padding: 0;
@@ -151,7 +135,6 @@
   }
 
   li {
-
     padding-bottom: 2em;
     border-bottom: solid 1px gray;
     margin-bottom: 2em;
@@ -162,16 +145,12 @@
       border-bottom: 0;
       margin-bottom: 0;
     }
-
   }
-
 }
 
 .locationDiscovery {
-
   a,
   button {
-
     display: inline-flex;
     align-items: center;
     color: $color-brand-blue-medium;
@@ -180,7 +159,7 @@
     background: none;
     padding: 0;
     border: none;
-    margin: 0 .4em;
+    margin: 0 0.4em;
 
     &:first-child {
       margin-left: 0;
@@ -191,12 +170,10 @@
     }
 
     svg {
-      font-size: .9em;
-      margin-left: .4em;
+      font-size: 0.9em;
+      margin-left: 0.4em;
     }
-
   }
-
 }
 
 .locationName {
@@ -211,15 +188,12 @@
   @media (max-width: 840px) {
     order: 1;
   }
-
 }
 
 .storesMapContainer {
   width: 100%;
   aspect-ratio: 800 / 500;
 }
-
-
 
 .map {
   width: 100%;

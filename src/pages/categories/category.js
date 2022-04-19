@@ -1,11 +1,11 @@
-import Head from 'next/head'
+import Head from "next/head";
 
-import Layout from '@components/Layout';
-import Header from '@components/Header';
-import Container from '@components/Container';
-import Button from '@components/Button';
+import Layout from "@components/Layout";
+import Header from "@components/Header";
+import Container from "@components/Container";
+import Button from "@components/Button";
 
-import styles from '@styles/Page.module.scss'
+import styles from "@styles/Page.module.scss";
 
 export default function Category() {
   return (
@@ -23,24 +23,16 @@ export default function Category() {
         <ul className={styles.products}>
           <li>
             <a href="#">
-              <div className={styles.productImage}>
-                Image
-              </div>
-              <h3 className={styles.productTitle}>
-                Product Name
-              </h3>
-              <p className={styles.productPrice}>
-                Product Price
-              </p>
+              <div className={styles.productImage}>Image</div>
+              <h3 className={styles.productTitle}>Product Name</h3>
+              <p className={styles.productPrice}>Product Price</p>
             </a>
             <p>
-              <Button>
-                Add to Cart
-              </Button>
+              <Button>Add to Cart</Button>
             </p>
           </li>
         </ul>
       </Container>
     </Layout>
-  )
+  );
 }

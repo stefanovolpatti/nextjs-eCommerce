@@ -1,11 +1,11 @@
-import Head from 'next/head'
+import Head from "next/head";
 
-import Layout from '@components/Layout';
-import Header from '@components/Header';
-import Container from '@components/Container';
-import Button from '@components/Button';
+import Layout from "@components/Layout";
+import Header from "@components/Header";
+import Container from "@components/Container";
+import Button from "@components/Button";
 
-import styles from '@styles/Product.module.scss'
+import styles from "@styles/Product.module.scss";
 
 export default function Product() {
   return (
@@ -17,25 +17,19 @@ export default function Product() {
 
       <Container>
         <div className={styles.productWrapper}>
-          <div className={styles.productImage}>
-            Image
-          </div>
+          <div className={styles.productImage}>Image</div>
           <div className={styles.productContent}>
             <h1>Product Name</h1>
             <div className={styles.productDescription}>
               <p>Description</p>
             </div>
-            <p className={styles.productPrice}>
-              $0.00
-            </p>
+            <p className={styles.productPrice}>$0.00</p>
             <p className={styles.productBuy}>
-              <Button>
-                Add to Cart
-              </Button>
+              <Button>Add to Cart</Button>
             </p>
           </div>
         </div>
       </Container>
     </Layout>
-  )
+  );
 }
