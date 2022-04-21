@@ -13,7 +13,6 @@ import Image from "next/image";
 
 export default function Home({ home, products }) {
   const { heroTitle, heroText, heroLink, heroBackground } = home;
-  console.log('products', products);
   return (
     <Layout>
       <Head>
@@ -31,12 +30,12 @@ export default function Home({ home, products }) {
                 <h2>{heroTitle}</h2>
                 <p>{heroText}</p>
               </div>
-              <Image
+              <img
                 className={styles.heroImage}
+                src={heroBackground.url}
                 width={heroBackground.width}
                 height={heroBackground.height}
-                src={heroBackground.url}
-                alt=""
+                alt="hero background"
               />
             </a>
           </Link>
@@ -51,7 +50,7 @@ export default function Home({ home, products }) {
                 <Link href="#">
                   <a>
                     <div className={styles.productImage}>
-                      <Image
+                      <img
                         width={product.image.width}
                         height={product.image.height}
                         src={product.image.url}
@@ -88,21 +87,15 @@ export async function getStaticProps() {
           heroLink
           heroText
           heroTitle
-          heroBackground {
-            width
-            url
-            height
-          }
+          name
+          slug
+          heroBackground
         }
         products(first: 4) {
           name
           price
           slug
-          image {
-            height
-            url
-            width
-          }
+          image
         }
       }
     `,
@@ -113,7 +106,7 @@ export async function getStaticProps() {
   return {
     props: {
       home,
-      products
+      products,
     },
   };
 }
