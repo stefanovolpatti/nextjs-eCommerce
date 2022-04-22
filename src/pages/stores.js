@@ -6,9 +6,23 @@ import Container from "@components/Container";
 
 import styles from "@styles/Page.module.scss";
 import { ApolloClient, gql, InMemoryCache } from "@apollo/client";
+import center from "@turf/center";
+import { points } from "@turf/helpers";
 import Map from "@components/Map";
+import { useEffect, useState } from "react";
 
 export default function Stores({ storeLocations }) {
+  const [activeStore, setActiveStore] = useState();
+
+  const features = points(
+    storeLocations.map(({ location }) => {
+      return [location.longitude, location.latitude];
+    })
+  );
+
+  const [defaultLatitude, defaultLongitude] =
+    center(features)?.geometry.coordinates;
+
   return (
     <Layout>
       <Head>
@@ -23,13 +37,17 @@ export default function Stores({ storeLocations }) {
           <div className={styles.storesLocations}>
             <ul className={styles.locations}>
               {storeLocations.map((location) => {
+                function handleOnClick() {
+                  setActiveStore(location.id);
+                }
+
                 return (
                   <li key={location.id}>
                     <p className={styles.locationName}>{location.name}</p>
                     <address>{location.address}</address>
                     <p>{location.phoneNumber}</p>
                     <p className={styles.locationDiscovery}>
-                      <button>Map</button>
+                      <button onClick={handleOnClick}>Map</button>
                       <a
                         href={`https://www.google.it/maps/dir//${location.location.latitude},${location.location.longitude}/@${location.location.latitude},${location.location.longitude},17z/`}
                         target="_blank"
@@ -49,13 +67,29 @@ export default function Stores({ storeLocations }) {
             <div className={styles.storesMapContainer}>
               <Map
                 className={styles.map}
-                center={[0, 0]}
+                center={[defaultLatitude, defaultLongitude]}
                 zoom={2}
                 scrollWheelZoom={false}
               >
                 {({ TileLayer, Marker, Popup }, map) => {
+                  const MapEffect = () => {
+                    useEffect(() => {
+                      return () => {
+                        if (!activeStore) return;
+                        const { location } = storeLocations.find(
+                          ({ id }) => id === activeStore
+                        );
+                        map.setView(
+                          [location.latitude, location.longitude],
+                          14
+                        );
+                      };
+                    }, [activeStore]);
+                    return null;
+                  };
                   return (
                     <>
+                      <MapEffect />
                       <TileLayer
                         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -63,15 +97,15 @@ export default function Stores({ storeLocations }) {
                       {storeLocations.map((location) => {
                         const { latitude, longitude } = location.location;
                         return (
-                          <div key={location.id}>
-                            <Marker position={[latitude, longitude]}>
-                              <Popup>
-                                <p>{location.name}</p>
-                                <p>{location.address}</p>
-                                <p>{location.id}</p>
-                              </Popup>
-                            </Marker>
-                          </div>
+                          <Marker
+                            position={[latitude, longitude]}
+                            key={location.id}
+                          >
+                            <Popup>
+                              <p>{location.name}</p>
+                              <p>{location.address}</p>
+                            </Popup>
+                          </Marker>
                         );
                       })}
                     </>
