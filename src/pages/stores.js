@@ -63,12 +63,15 @@ export default function Stores({ storeLocations }) {
                       {storeLocations.map((location) => {
                         const { latitude, longitude } = location.location;
                         return (
-                          <Marker position={[latitude, longitude]}>
-                            <Popup>
-                              <p>{location.name}</p>
-                              <p>{location.address}</p>
-                            </Popup>
-                          </Marker>
+                          <div key={location.id}>
+                            <Marker position={[latitude, longitude]}>
+                              <Popup>
+                                <p>{location.name}</p>
+                                <p>{location.address}</p>
+                                <p>{location.id}</p>
+                              </Popup>
+                            </Marker>
+                          </div>
                         );
                       })}
                     </>
