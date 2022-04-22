@@ -8,7 +8,6 @@ import styles from "./Header.module.scss";
 
 const Header = () => {
   const { cart = {} } = useSnipcart();
-  console.log(cart);
   return (
     <header className={styles.header}>
       <Container className={styles.headerContainer}>
