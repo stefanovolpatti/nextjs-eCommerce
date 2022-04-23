@@ -7,6 +7,8 @@ import Container from "@components/Container";
 import Button from "@components/Button";
 
 import styles from "@styles/Page.module.scss";
+import { buildImage } from "@lib/cloudinary";
+import Image from "next/image";
 
 export default function Home({ home, products }) {
   const { heroTitle, heroText, heroLink, heroBackground } = home;
@@ -27,9 +29,9 @@ export default function Home({ home, products }) {
                 <h2>{heroTitle}</h2>
                 <p>{heroText}</p>
               </div>
-              <img
+              <Image
                 className={styles.heroImage}
-                src={heroBackground.url}
+                src={buildImage(heroBackground.public_id).toURL()}
                 width={heroBackground.width}
                 height={heroBackground.height}
                 alt="hero background"
@@ -42,15 +44,18 @@ export default function Home({ home, products }) {
 
         <ul className={styles.products}>
           {products.map((product) => {
+            const imageUrl = buildImage(product.image.public_id)
+              .resize("w_900,h_900")
+              .toURL();
             return (
               <li key={product.slug}>
                 <Link href={`/products/${product.slug}`}>
                   <a>
                     <div className={styles.productImage}>
-                      <img
+                      <Image
                         width={product.image.width}
                         height={product.image.height}
-                        src={product.image.url}
+                        src={imageUrl}
                         alt="products images"
                       />
                     </div>

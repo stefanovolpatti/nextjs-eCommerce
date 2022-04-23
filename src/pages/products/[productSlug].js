@@ -5,6 +5,8 @@ import Container from "@components/Container";
 import Button from "@components/Button";
 
 import styles from "@styles/Product.module.scss";
+import { buildImage } from "@lib/cloudinary";
+import Image from "next/image";
 
 export default function Product({ product }) {
   return (
@@ -20,10 +22,10 @@ export default function Product({ product }) {
       <Container>
         <div className={styles.productWrapper}>
           <div className={styles.productImage}>
-            <img
+            <Image
               width={product.image.width}
               height={product.image.height}
-              src={product.image.url}
+              src={buildImage(product.image.public_id).toURL()}
               alt={product.name}
             />
           </div>
