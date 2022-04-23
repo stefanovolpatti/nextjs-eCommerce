@@ -4,9 +4,9 @@ const Footer = ({ ...rest }) => {
   return (
     <footer className={styles.footer} {...rest}>
       <p>
-        &copy; <a href="https://spacejelly.dev">Space Jelly</a>,{" "}
+        &copy; <a href="https://stefanovolpatti.com">Stefano Volpatti</a>,{" "}
         {new Date().getFullYear()} &amp; Images via{" "}
-        <a href="https://unsplash.com/">unsplash.com</a>
+        <a href="https://demo.vercel.store/">vercel.com</a>
       </p>
     </footer>
   );
