@@ -42,6 +42,7 @@
   }
 
   h2 {
+    color: $color-brand-blue-light;
     font-size: 3.5em;
     margin: 0;
 
@@ -51,6 +52,9 @@
 
     @media (max-width: 640px) {
       font-size: 2em;
+    }
+    @media(min-width: 1280px) {
+      width: 10%;
     }
   }
 
@@ -73,6 +77,7 @@
 }
 
 .heroImage {
+  height: 30vh;
   @media (max-width: 720px) {
     order: 1;
   }
