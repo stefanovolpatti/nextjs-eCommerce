@@ -16,18 +16,20 @@ export default function Home({ home, products }) {
     <Layout>
       <Head>
         <title>Next Ecommerce</title>
-        <meta name="description" content="Get your Space Jelly gear!" />
+        <meta name="description" content="Welcome to NextJS Ecommerce!" />
       </Head>
 
       <Container>
-        <h1 className="sr-only">Space Jelly Gear</h1>
+        <h1 className="sr-only">Next Ecommerce</h1>
 
         <div className={styles.hero}>
+          <div className={styles.alert}>
+            <p>{heroText}</p>
+          </div>
           <Link href={heroLink}>
             <a>
               <div className={styles.heroContent}>
                 <h2>{heroTitle}</h2>
-                <p>{heroText}</p>
               </div>
               <Image
                 className={styles.heroImage}

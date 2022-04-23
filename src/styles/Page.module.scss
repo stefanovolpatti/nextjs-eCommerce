@@ -8,6 +8,16 @@
   }
 }
 
+.alert {
+  padding-bottom: 1rem;
+
+  p {
+    color: red;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+}
+
 .heroLink {
   display: flex;
 
