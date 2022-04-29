@@ -39,10 +39,22 @@ yarn install
 ```
 
 
-### Run Application
+### Run Application in Development mode
 ```
 yarn dev
 ```
+
+### Build Application
+```
+yarn build
+```
+
+
+### Run in production mode
+```
+yarn start
+```
+
 
 Open http://localhost:3000 with your browser to see the result.
 
