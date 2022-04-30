@@ -22,7 +22,7 @@ This project was made using the follow technologies:
 
 # 👷 How to run
 You need to install [Node.js](https://nodejs.org/it/) and [Yarn](https://yarnpkg.com/) first, then create an account for:
-- [GraphCMS](https://graphcms.com/)
+- [GraphCMS](https://graphcms.com/);
 - [Stripe](https://stripe.com/it);
 - [Snipcart](https://snipcart.com/);
 - [Cloudinary](https://cloudinary.com/)
