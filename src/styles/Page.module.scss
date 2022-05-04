@@ -9,12 +9,18 @@
 }
 
 .alert {
-  padding-bottom: 1rem;
-
   p {
-    color: red;
+    color: $alert;
+    background-color: $alert-background;
+    border-radius: 0.5em;
+    padding: 0.5em;
     font-size: 1.2em;
-    font-weight: bold;
+    font-weight: 550;
+  }
+  @media (max-width: 640px) {
+    p {
+      font-size: 1em;
+    }
   }
 }
 
@@ -52,7 +58,7 @@
   }
 
   h2 {
-    color: $color-brand-blue-light;
+    color: $color-white;
     font-size: 3.5em;
     margin: 0;
 
@@ -62,9 +68,7 @@
 
     @media (max-width: 640px) {
       font-size: 2em;
-    }
-    @media(min-width: 1280px) {
-      width: 10%;
+      color: $color-brand-purple;
     }
   }
 
@@ -88,6 +92,7 @@
 
 .heroImage {
   height: 30vh;
+  border-radius: 0.4em;
   @media (max-width: 720px) {
     order: 1;
   }
