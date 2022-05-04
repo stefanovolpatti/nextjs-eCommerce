@@ -11,7 +11,7 @@ import { buildImage } from "@lib/cloudinary";
 import Image from "next/image";
 
 export default function Home({ home, products }) {
-  const { heroTitle, heroText, heroLink, heroBackground } = home;
+  const { heroTitle, heroText, heroAlert, heroLink, heroBackground, heroSubtitle } = home;
   return (
     <Layout>
       <Head>
@@ -24,12 +24,13 @@ export default function Home({ home, products }) {
 
         <div className={styles.hero}>
           <div className={styles.alert}>
-            <p>{heroText}</p>
+            <p>{heroAlert}</p>
           </div>
           <Link href={heroLink}>
             <a>
               <div className={styles.heroContent}>
                 <h2>{heroTitle}</h2>
+                <h3>{heroText}</h3>
               </div>
               <Image
                 className={styles.heroImage}
@@ -42,7 +43,7 @@ export default function Home({ home, products }) {
           </Link>
         </div>
 
-        <h2 className={styles.heading}>Featured Gear</h2>
+        <h2 className={styles.heading}>{heroSubtitle}</h2>
 
         <ul className={styles.products}>
           {products.map((product) => {
@@ -100,12 +101,16 @@ export async function getStaticProps({ locale }) {
           heroLink
           heroText
           heroTitle
+          heroAlert
+          heroSubtitle
           name
           slug
           heroBackground
           localizations(locales: [$locale]) {
             heroText
             heroTitle
+            heroAlert
+            heroSubtitle
             locale
           }
         }
