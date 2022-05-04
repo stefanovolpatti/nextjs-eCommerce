@@ -41,9 +41,10 @@
   margin: 0 2em;
 
   @media (max-width: 720px) {
+    padding-top: 1rem;
     width: 100%;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     order: 3;
     margin: 0;
   }
@@ -102,6 +103,8 @@
   @media (max-width: 720px) {
     order: 4;
     margin-left: 0;
+    padding-top: 1.5rem;
+    justify-content: center;
   }
 
   a {
