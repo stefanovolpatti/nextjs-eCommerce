@@ -9,7 +9,7 @@ const Button = ({ children, className, color, ...rest }) => {
 
   return (
     <button className={buttonClassName} data-color={color} {...rest}>
-      {children}. test
+      {children}
     </button>
   );
 };
